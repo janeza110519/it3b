@@ -6,10 +6,10 @@ require_once (__DIR__ . '/../functions/auth.php');
 require_once (__DIR__ . '/../functions/auth.php');
 require_once (__DIR__ . '/../functions/session.php');
 
-define('BASE_URL' , 'http://localhost/it34b');
+define('BASE_URL' , 'http://localhost/it3b');
 
 define('DB_HOST' , 'localhost');
-define('DB_NAME' , 'it34b_lab');
+define('DB_NAME' , 'it3b_lab_db');
 define('DB_USER' , 'root');
 define('DB_PASS' , '');
 

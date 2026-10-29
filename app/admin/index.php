@@ -51,73 +51,195 @@ if ($section === 'activity-logs'){
     <link rel="stylesheet" href="https://cdn.datatables.net/3.0.4/css/dataTables.bootstap5.min.css"/>
 
     <style>
-        body {
-            background-color: #f4f6f9;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+        ```css
+/* General Page Style */
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 25px;
+    color: #343a40;
+}
 
-        .container-box {
-            width: 95%;
-            margin: 40px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
+/* Main Heading */
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 15px;
+}
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
+/* Sign Out Button */
+body > a.btn-danger {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-            color: #333;
-        }
+body > a.btn-danger:hover {
+    background-color: #bb2d3b;
+    transform: translateY(-1px);
+}
 
-        .logout-btn {
-            background-color: #dc3545;
-            color: white;
-            text-decoration: none;
-            padding: 9px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-        }
+/* Horizontal Line */
+hr {
+    border: 0;
+    border-top: 1px solid #d6d9de;
+    margin: 25px 0;
+}
 
-        .logout-btn:hover {
-            background-color: #bb2d3b;
-            color: white;
-        }
+/* Navigation Buttons */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
 
-        .table-container {
-            overflow-x: auto;
-        }
+nav .btn {
+    padding: 11px 20px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-        #example {
-            width: 100% !important;
-        }
+nav .btn:hover {
+    background-color: #084298;
+    transform: translateY(-2px);
+}
 
-        #example thead th {
-            background-color: #212529;
-            color: white;
-            white-space: nowrap;
-        }
+/* Section Headings */
+h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #212529;
+    margin: 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #0d6efd;
+}
 
-        #example tbody td {
-            vertical-align: middle;
-            white-space: nowrap;
-        }
+/* Table Layout */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+    table-layout: auto;
+}
 
-        .page-title {
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 18px;
-        }
+/* Table Header */
+table thead th {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 15px 12px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: normal;
+    border: none;
+}
+
+/* Table Rows */
+table tbody tr {
+    transition: background-color 0.2s;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table tbody tr:hover {
+    background-color: #eaf2ff;
+}
+
+/* Table Cells */
+table tbody td {
+    padding: 13px 12px;
+    font-size: 13px;
+    color: #495057;
+    vertical-align: middle;
+    border-bottom: 1px solid #e9ecef;
+    overflow-wrap: anywhere;
+}
+
+/* Remove Bottom Border from Last Row */
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Column Widths for Better Organization */
+table th:nth-child(1),
+table td:nth-child(1) {
+    min-width: 75px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    min-width: 70px;
+}
+
+/* Make Long User Agent Text Easier to Read */
+table th:nth-child(7),
+table td:nth-child(7) {
+    min-width: 220px;
+    max-width: 320px;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    line-height: 1.5;
+}
+
+/* Improve Date and Time Display */
+table th:last-child,
+table td:last-child {
+    min-width: 150px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 21px;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav .btn {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    table {
+        min-width: 850px;
+    }
+
+    table thead th,
+    table tbody td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
     </style>
 </head>
 <body>
